@@ -1,5 +1,9 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL
 
+if (!process.env.NEXT_PUBLIC_API_URL) {
+  console.warn("Warning: NEXT_PUBLIC_API_URL is undefined. Skipping build-time fetch."); 
+}
+
 export interface ApiResponse<T = any> {
   success: boolean
   data?: T
