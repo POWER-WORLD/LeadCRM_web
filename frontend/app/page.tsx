@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { apiClient } from "@/lib/api"
 import Breadcrumb from "@/components/breadcrumb"
+export const dynamic = 'force-dynamic';
+
 
 export default async function HomePage() {
   let stats = {
