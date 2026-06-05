@@ -1,7 +1,7 @@
 import { Router } from "express"
 import { getLeads, createLead, getLeadById, updateLead, deleteLead, getLeadStats } from "../controllers/leadController"
 
-const router = Router()
+const router: Router = Router(); 
 
 // GET /api/leads - Get all leads with pagination, search, filter, sort
 router.get("/", getLeads)

@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Express } from 'express';
 import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
@@ -10,7 +10,7 @@ import { errorHandler, notFound } from "./middleware/errorHandler";
 // Load environment variables
 dotenv.config();
 
-const app = express();
+const app: Express = express();
 const PORT = process.env.PORT || 5000;
 app.set("trust proxy", 1);
 
