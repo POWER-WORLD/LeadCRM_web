@@ -49,7 +49,7 @@ A modern, full-stack lead management application built with Next.js, TypeScript,
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/fedhako7/lead-management.git
+git clone https://github.com/POWER-WORLD/LeadCRM_web.git
 cd lead-management
 ```
 
@@ -182,10 +182,10 @@ GET /api/leads?page=1&limit=10&search=john&status=New&sortBy=createdAt&sortOrder
 ## 🚀 Deployment
 
 ### 🔹 Frontend (Vercel)  
-🌐 [Lead Management Frontend](https://lead-management-frontend-fedesas-projects.vercel.app/)
+🌐 [Lead Management Frontend](https://lead-crm-web.vercel.app//)
 
 ### 🔹 Backend (Render)  
-🌐 [Lead Management Backend](https://lead-management-backend-at71.onrender.com/)
+🌐 [Lead Management Backend](https://lead-crm-web-backend.vercel.app/health)
 
 
 ### Database (MongoDB Atlas)
