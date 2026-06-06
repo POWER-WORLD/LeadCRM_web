@@ -99,19 +99,19 @@ The project follows a full-stack architecture using Next.js, Express.js, and Mon
 
 ### Dashboard
 
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard](./frontend/public/screenshots/Screenshot%202026-06-06%20190629.png)
 
 ### Lead Management
 
-![Lead List](./screenshots/leads.png)
+![Lead List](./frontend/public/screenshots/Screenshot%202026-06-06%20190701.png)
 
 ### Add Lead
 
-![Add Lead](./screenshots/add-lead.png)
+![Add Lead](./frontend/public/screenshots/Screenshot%202026-06-06%20190728.png)
 
 ### Analytics
 
-![Analytics](./screenshots/analytics.png)
+![Analytics](./frontend/public/screenshots/Screenshot%202026-06-06%20190811.png)
 
 ---
 
