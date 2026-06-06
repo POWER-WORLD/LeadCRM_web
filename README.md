@@ -1,203 +1,349 @@
-# 🚀 LeadCRM - Lead Management System
+# 🚀 LeadCRM - Full Stack Lead Management CRM
 
-A modern, full-stack lead management application built with Next.js, TypeScript, Express, and MongoDB. Streamline your sales process with comprehensive lead tracking, filtering, and analytics.
+![Next.js](https://img.shields.io/badge/Next.js-14-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-Blue)
+![Node.js](https://img.shields.io/badge/Node.js-Green)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green)
+
+## 📌 Project Overview
+
+LeadCRM is a modern Lead Management CRM built as part of a Full Stack Developer Internship Assignment.
+
+The application helps businesses efficiently manage customer leads throughout the sales pipeline by providing lead creation, tracking, searching, filtering, analytics, and status management capabilities.
+
+The project follows a full-stack architecture using Next.js, Express.js, and MongoDB with a focus on scalability, clean code, responsiveness, and user experience.
+
+---
+
+## 🎯 Assignment Requirements Coverage
+
+### Core Requirements
+
+✅ Add New Leads
+
+✅ View All Leads
+
+✅ Update Lead Status
+
+✅ Edit Lead Details
+
+✅ Delete Leads
+
+✅ Search Leads
+
+### Required Fields
+
+✅ Name
+
+✅ Email
+
+✅ Phone Number
+
+✅ Company Name
+
+✅ Lead Status
+
+✅ Notes
+
+✅ Created Date
+
+---
 
 ## ✨ Features
 
-### 🎯 Core Functionality
-- **Lead Management**: Create, view, update, and delete leads
-- **Advanced Filtering**: Search by name/email, filter by status
-- **Smart Sorting**: Sort by name, email, or creation date
-- **Pagination**: Efficient data loading with customizable page sizes
-- **Real-time Search**: Debounced search with instant feedback
+### Lead Management
 
-### 📊 Analytics & Insights
-- **Dashboard Overview**: Key metrics and conversion rates
-- **Status Distribution**: Visual breakdown of lead pipeline
-- **Recent Activity**: Latest lead updates and changes
-- **Performance Tracking**: Monitor your sales funnel
+- Create new leads
+- Update lead information
+- Delete leads
+- Manage lead lifecycle
+- Real-time form validation
 
-### 🎨 User Experience
-- **Responsive Design**: Works perfectly on desktop, tablet, and mobile
-- **Modern UI**: Clean, professional interface with Tailwind CSS
-- **Sticky Navigation**: Always-accessible header and breadcrumbs
-- **Loading States**: Smooth loading indicators and skeleton screens
-- **Error Handling**: Graceful error messages and retry options
+### Search & Filtering
 
-## 🛠️ Tech Stack
+- Search by Name
+- Search by Email
+- Search by Company
+- Filter by Lead Status
+- Instant search experience
+
+### Dashboard Analytics
+
+- Total Leads
+- New Leads
+- Contacted Leads
+- Qualified Leads
+- Converted Leads
+- Lost Leads
+- Conversion Tracking
+
+### Data Management
+
+- Pagination
+- Sorting
+- Filtering
+- Server-side querying
+- Optimized database operations
+
+### User Experience
+
+- Fully Responsive Design
+- Mobile Friendly Interface
+- Loading States
+- Error Handling
+- Clean Modern UI
+
+---
+
+## 📸 Screenshots
+
+### Dashboard
+
+![Dashboard](./screenshots/dashboard.png)
+
+### Lead Management
+
+![Lead List](./screenshots/leads.png)
+
+### Add Lead
+
+![Add Lead](./screenshots/add-lead.png)
+
+### Analytics
+
+![Analytics](./screenshots/analytics.png)
+
+---
+
+## 🛠 Tech Stack
 
 ### Frontend
-- **Next.js 14** - React framework with App Router
-- **TypeScript** - Type-safe development
-- **Tailwind CSS** - Utility-first CSS framework
-- **Shadcn/ui** - Modern component library
-- **Lucide React** - Beautiful icons
+
+- Next.js 14
+- React
+- TypeScript
+- Tailwind CSS
+- Shadcn/UI
+- Lucide Icons
 
 ### Backend
-- **Node.js** - JavaScript runtime
-- **Express.js** - Web application framework
-- **TypeScript** - Type-safe backend development
-- **MongoDB** - NoSQL database
-- **Mongoose** - MongoDB object modeling
 
-## 🚀 Quick Start
+- Node.js
+- Express.js
+- TypeScript
 
-### Prerequisites
-- Node.js 18+ installed
-- MongoDB Atlas account (or local MongoDB)
-- Git
+### Database
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/POWER-WORLD/LeadCRM_web.git
-cd lead-management
+- MongoDB Atlas
+- Mongoose
+
+### Deployment
+
+- Vercel (Frontend)
+- Vercel (Backend)
+- MongoDB Atlas
+
+---
+
+## 🏗 Architecture
+
+```text
+Frontend (Next.js)
+        │
+        ▼
+REST API (Express.js)
+        │
+        ▼
+MongoDB Atlas
 ```
 
-### 2. Setup Frontend
-```bash
-# Move to lead-management/frontend
-cd frontend
-# Install dependencies
-npm install
+---
 
-# Create environment file
-cp .env
+## 📂 Project Structure
 
-# Add your environment variables
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
-```
-
-### 3. Setup Backend
-```bash
-# Move to lead-management/backend
-cd backend
-
-# Install dependencies
-npm install
-
-# Create environment file
-cp .env
-
-# Add your MongoDB connection string
-MONGODB_URI=your_mongodb_connection_string
-PORT=5000
-NODE_ENV=development
-FRONTEND_URL=http://localhost:3000
-```
-
-### 4. Start Development Servers
-
-**Terminal 1 - Backend:**
-```bash
-# Move to lead-management/backend
-
-cd backend
-npm run dev
-```
-
-**Terminal 2 - Frontend:**
-```bash
-# Move to lead-management/frontend
-
-npm run dev
-```
-
-### 5. Access the Application
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:5000
-- **Health Check**: http://localhost:5000/health
-
-## 📁 Project Structure
-
-```
-lead-management/
-├── app/                    # Next.js app directory
-│   ├── leads/             # Lead management pages
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Homepage
-├── components/            # Reusable components
-│   ├── ui/               # Shadcn/ui components
-│   ├── header.tsx        # Navigation header
-│   ├── footer.tsx        # Site footer
-│   └── breadcrumb.tsx    # Breadcrumb navigation
-├── lib/                  # Utility libraries
-│   ├── api.ts           # API client
-│   └── utils.ts         # Helper functions
-├── types/               # TypeScript type definitions
-├── backend/            # Express.js backend
+```text
+LeadCRM/
+│
+├── frontend/
+│   ├── app/
+│   ├── components/
+│   ├── lib/
+│   ├── hooks/
+│   └── types/
+│
+├── backend/
 │   ├── src/
-│   │   ├── controllers/ # Route controllers
-│   │   ├── models/     # Mongoose models
-│   │   ├── routes/     # API routes
-│   │   ├── middleware/ # Custom middleware
-│   │   ├── types/      # Backend types
-│   │   └── db/         # Database connection
-│   ├── package.json
-│   └── tsconfig.json
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── middleware/
+│   │   └── db/
+│
+├── screenshots/
+│
 └── README.md
 ```
 
-## 🔧 Environment Variables
+---
 
-### Frontend (`.env.local`)
+## 🔌 API Endpoints
+
+### Create Lead
+
+```http
+POST /api/leads
+```
+
+### Get All Leads
+
+```http
+GET /api/leads
+```
+
+### Get Single Lead
+
+```http
+GET /api/leads/:id
+```
+
+### Update Lead
+
+```http
+PUT /api/leads/:id
+```
+
+### Delete Lead
+
+```http
+DELETE /api/leads/:id
+```
+
+### Search Leads
+
+```http
+GET /api/leads?search=query
+```
+
+---
+
+## ⚙ Environment Variables
+
+### Frontend
+
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:5000/api
 ```
 
-### Backend (`backend/.env`)
+### Backend
+
 ```env
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/database
 PORT=5000
+MONGODB_URI=your_mongodb_connection_string
 NODE_ENV=development
 FRONTEND_URL=http://localhost:3000
 ```
 
-## 📊 API Endpoints
+---
 
-### Leads
-- `POST /api/leads` - Create new lead
-- `GET /api/leads` - Get all leads (with pagination, search, filter)
+## 🚀 Installation
 
-### Query Parameters
+### Clone Repository
+
+```bash
+git clone https://github.com/POWER-WORLD/LeadCRM_web.git
 ```
-GET /api/leads?page=1&limit=10&search=john&status=New&sortBy=createdAt&sortOrder=desc
+
+### Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
 ```
 
-## 🎨 UI Components
+### Backend Setup
 
-### Pages
-- **Dashboard** - Overview with stats and recent activity
-- **Lead List** - Paginated table with filtering and search
-- **Add Lead** - Form to create new leads
+```bash
+cd backend
+npm install
+npm run dev
+```
 
-### Components
-- **Header** - Sticky navigation with active states
-- **Footer** - Links and social media
-- **Breadcrumbs** - Navigation trail
-- **Search Bar** - Debounced search input
-- **Status Badges** - Color-coded lead status
-- **Pagination** - Navigate through lead pages
+---
 
-## 🚀 Deployment
+## 🌐 Live Demo
 
-### 🔹 Frontend (Vercel)  
-🌐 [Lead Management Frontend](https://lead-crm-web.vercel.app//)
+### Frontend
 
-### 🔹 Backend (Vercel)  
-🌐 [Lead Management Backend](https://lead-crm-web-backend.vercel.app/health)
+https://lead-crm-web.vercel.app/
 
+### Backend
 
-### Database (MongoDB Atlas)
-1. Create cluster
-2. Setup database user
-3. Configure network access
-4. Get connection string
+https://lead-crm-web-backend.vercel.app/health
 
-## 👨‍💻 Author
+---
 
-**Fedesa Yelmachew**
-- GitHub: [@fedhako7](https://github.com/fedhako7)
-- LinkedIn: [linkfedhako7](https://linkedin.com/in/linkfedhako7)
-- Twitter: [@nuyi_fi_siyi](https://twitter.com/nuyi_fi_siyi)
-- LeetCode: [fedhasayel](https://leetcode.com/u/fedhasayel/)
+## 🎁 Bonus Features Implemented
+
+✅ Dashboard Statistics
+
+✅ Pagination
+
+✅ Sorting
+
+✅ Filtering
+
+✅ Responsive Design
+
+✅ Deployment
+
+✅ Loading States
+
+✅ Error Handling
+
+✅ Clean Architecture
+
+---
+
+## 🔮 Future Improvements
+
+- Authentication & Authorization
+- Role-based Access Control
+- Lead Activity History
+- Email Notifications
+- CSV Export
+- Team Collaboration
+- Advanced Analytics Dashboard
+
+---
+
+## 👨‍💻 Developer
+
+### Pawan Kumar
+
+B.Tech Computer Science Engineering
+
+GitHub:
+https://github.com/POWER-WORLD
+
+LinkedIn:
+https://www.linkedin.com/in/pawan-kumar-23a3402b3/
+
+LeetCode:
+https://leetcode.com/u/Pawankumar3253702/
+
+---
+
+## 📝 Assignment Submission
+
+This project was developed as part of a Full Stack Developer Internship Assignment to demonstrate:
+
+- Frontend Development Skills
+- Backend API Design
+- Database Integration
+- Full Stack Architecture
+- Problem Solving
+- Responsive UI Development
+- Clean Code Practices
+
+Thank you for reviewing my submission.
