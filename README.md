@@ -184,7 +184,7 @@ GET /api/leads?page=1&limit=10&search=john&status=New&sortBy=createdAt&sortOrder
 ### 🔹 Frontend (Vercel)  
 🌐 [Lead Management Frontend](https://lead-crm-web.vercel.app//)
 
-### 🔹 Backend (Render)  
+### 🔹 Backend (Vercel)  
 🌐 [Lead Management Backend](https://lead-crm-web-backend.vercel.app/health)
 
 
