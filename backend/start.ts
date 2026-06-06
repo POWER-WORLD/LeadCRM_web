@@ -17,33 +17,30 @@ app.set("trust proxy", 1);
 // Connect to MongoDB
 connectDB();
 
-// CORS configuration
+// CORS configuration - FIXED: Added your specific frontend URL fallback
 const allowedOrigins = [
-  process.env.FRONTEND_URL || "http://localhost:3000",
-  // Add other allowed origins as needed
-];
+  process.env.FRONTEND_URL,
+  "https://lead-crm-web.vercel.app", // Corrected fallback domain
+  "http://localhost:3000"          
+].filter(Boolean) as string[];      
 
-const corsOptions: cors.CorsOptions = {
+app.use(cors({
   origin: (origin, callback) => {
-    // Allow requests with no origin (like mobile apps or curl)
     if (!origin) return callback(null, true);
     
-    if (allowedOrigins.includes(origin)) {
+    if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
-      callback(new Error("Not allowed by CORS"));
+      callback(new Error('Not allowed by CORS'));
     }
   },
+  credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true, // If you need to send cookies or auth headers
-  maxAge: 86400, // Cache preflight requests for 24 hours
-};
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
-// Apply CORS middleware
-app.use(cors(corsOptions));
-// Handle preflight OPTIONS requests
-app.options("*", cors(corsOptions));
+// Handle preflight requests globally
+app.options('*', cors()); 
 
 // Security middleware
 app.use(
@@ -61,7 +58,7 @@ app.use(
 
 // Rate limiting
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
+  windowMs: 15 * 60 * 1000, 
   max: 100,
   message: {
     success: false,
@@ -69,13 +66,6 @@ const limiter = rateLimit({
   },
 });
 app.use(limiter);
-
-// Debug middleware to log request and response headers
-app.use((req, res, next) => {
-  // console.log("Request Origin:", req.headers.origin);
-  // console.log("Response Headers:", res.getHeaders());
-  next();
-});
 
 // Body parsing middleware
 app.use(express.json({ limit: "10mb" }));
@@ -97,9 +87,11 @@ app.use("/api/leads", leadRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-  console.log(`Environment: ${process.env.NODE_ENV || "development"}`);
-});
+// ONLY listen if running locally, Vercel will handle production routing automatically
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Server is running locally on port ${PORT}`);
+  });
+}
 
 export default app;
