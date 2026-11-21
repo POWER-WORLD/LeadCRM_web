@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: lead-crm-web-backend
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        value: https://lead-crm-web.vercel.app
+      - key: ALLOWED_ORIGINS
+        value: https://lead-crm-web.vercel.app,http://localhost:3000,http://127.0.0.1:3000
+      - key: BACKEND_URL
+        value: https://lead-crm-web-backend.onrender.com
+
